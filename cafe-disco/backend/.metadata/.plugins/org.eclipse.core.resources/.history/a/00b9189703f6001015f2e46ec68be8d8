@@ -1,0 +1,5 @@
+package com.cafedisco.exception;
+
+public class ResourceNotFoundException {
+
+}

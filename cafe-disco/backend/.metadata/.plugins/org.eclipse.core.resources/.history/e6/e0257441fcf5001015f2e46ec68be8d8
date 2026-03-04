@@ -1,0 +1,33 @@
+package com.cafedisco.model;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+
+@Entity
+public class Coffee {
+	
+    @Id
+    private String id;
+
+    private String name;
+    private String origin;
+    private String history;
+    private String song;
+
+    public Coffee() {} // REQUIRED by JPA
+
+    public Coffee(String id, String name, String origin, String history, String song) {
+        this.id = id;
+        this.name = name;
+        this.origin = origin;
+        this.history = history;
+        this.song = song;
+    }
+
+    public String getId() { return id; }
+    public String getName() { return name; }
+    public String getOrigin() { return origin; }
+    public String getHistory() { return history; }
+    public String getSong() { return song; }
+
+}

@@ -1,0 +1,30 @@
+package com.cafedisco.service;
+
+import org.springframework.stereotype.Service;
+import com.cafedisco.model.Coffee;
+
+import java.util.List;
+
+@Service
+public class CoffeeService {
+	
+    public List<Coffee> getAllCoffees() {
+        return List.of(
+            new Coffee("espresso", "Espresso", "Italy",
+                "Strong Italian coffee culture.",
+                "/music/espresso.mp3"),
+            new Coffee("latte", "Latte", "France / Italy",
+                "Milk-based espresso drink.",
+                "/music/latte.mp3")
+        );
+    }
+
+    public Coffee getCoffeeById(String id) {
+        return getAllCoffees()
+                .stream()
+                .filter(c -> c.getId().equals(id))
+                .findFirst()
+                .orElse(null);
+    }
+
+}

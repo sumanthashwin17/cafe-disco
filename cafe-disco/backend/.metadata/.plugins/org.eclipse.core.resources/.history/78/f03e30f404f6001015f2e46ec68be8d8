@@ -1,0 +1,53 @@
+package com.cafedisco.service;
+
+import org.springframework.stereotype.Service;
+import com.cafedisco.model.Coffee;
+import com.cafedisco.repository.CoffeeRepository;
+
+import java.util.List;
+import java.util.Optional;
+
+@Service
+public class CoffeeService {
+	
+    private final CoffeeRepository coffeeRepository;
+
+    public CoffeeService(CoffeeRepository coffeeRepository) {
+        this.coffeeRepository = coffeeRepository;
+    }
+
+    // CREATE
+    public Coffee createCoffee(Coffee coffee) {
+        return coffeeRepository.save(coffee);
+    }
+
+    // READ ALL
+    public List<Coffee> getAllCoffees() {
+        return coffeeRepository.findAll();
+    }
+
+    // READ BY ID
+    public Optional<Coffee> getCoffeeById(Long id) {
+        return coffeeRepository.findById(id);
+    }
+
+    // UPDATE
+    public Coffee updateCoffee(Long id, Coffee updatedCoffee) {
+        Coffee coffee = coffeeRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Coffee not found"));
+
+        coffee.setName(updatedCoffee.getName());
+        coffee.setOrigin(updatedCoffee.getOrigin());
+        coffee.setHistory(updatedCoffee.getHistory());
+        coffee.setMood(updatedCoffee.getMood());
+        coffee.setSong(updatedCoffee.getSong());
+
+        return coffeeRepository.save(coffee);
+    }
+
+    // DELETE
+    public void deleteCoffee(Long id) {
+        coffeeRepository.deleteById(id);
+    }
+
+}

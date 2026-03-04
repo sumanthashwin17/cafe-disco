@@ -1,0 +1,38 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+ 🌈 Disco Gradient Animation 
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background: transparent;
+} 
+
+
+/*.disco-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  background: linear-gradient(
+    270deg,
+    #6b21a8,
+    #1e3a8a,
+    #be185d,
+    #7c3aed
+  );
+  background-size: 600% 600%;
+  animation: discoGradient 10s ease infinite;
+} */
+
+@keyframes discoGradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+} 
+
+
+
+

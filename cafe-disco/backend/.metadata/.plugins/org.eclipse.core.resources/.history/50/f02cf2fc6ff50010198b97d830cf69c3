@@ -1,0 +1,5 @@
+package com.cafedisco.controller;
+
+public class CoffeeController {
+
+}

@@ -1,0 +1,30 @@
+package com.cafedisco.service;
+
+import org.springframework.stereotype.Service;
+import com.cafedisco.model.Coffee;
+import com.cafedisco.repository.CoffeeRepository;
+
+import java.util.List;
+
+@Service
+public class CoffeeService {
+	
+    private final CoffeeRepository coffeeRepository;
+
+    public CoffeeService(CoffeeRepository coffeeRepository) {
+        this.coffeeRepository = coffeeRepository;
+    }
+
+    public List<Coffee> getAllCoffees() {
+        return coffeeRepository.findAll();
+    }
+
+    public Coffee getCoffeeById(String id) {
+        return coffeeRepository.findById(id).orElse(null);
+    }
+
+    public Coffee saveCoffee(Coffee coffee) {
+        return coffeeRepository.save(coffee);
+    }
+
+}

@@ -1,0 +1,25 @@
+package com.cafedisco.model;
+
+public class Coffee {
+	
+	private String id;
+    private String name;
+    private String origin;
+    private String history;
+    private String song;
+
+    public Coffee(String id, String name, String origin, String history, String song) {
+        this.id = id;
+        this.name = name;
+        this.origin = origin;
+        this.history = history;
+        this.song = song;
+    }
+
+    public String getId() { return id; }
+    public String getName() { return name; }
+    public String getOrigin() { return origin; }
+    public String getHistory() { return history; }
+    public String getSong() { return song; }
+
+}

@@ -1,0 +1,3 @@
+spring.application.name=cafe-disco-backend
+server.port=4001
+

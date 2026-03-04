@@ -1,0 +1,30 @@
+package com.cafedisco.controller;
+
+import com.cafedisco.model.Coffee;
+import com.cafedisco.service.CoffeeService;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+@RestController
+@RequestMapping("/api/coffees")
+@CrossOrigin(origins = "http://localhost:3000")
+public class CoffeeController {
+	
+    private final CoffeeService coffeeService;
+
+    public CoffeeController(CoffeeService coffeeService) {
+        this.coffeeService = coffeeService;
+    }
+
+    @GetMapping
+    public List<Coffee> getAllCoffees() {
+        return coffeeService.getAllCoffees();
+    }
+
+    @GetMapping("/{id}")
+    public Coffee getCoffee(@PathVariable String id) {
+        return coffeeService.getCoffeeById(id);
+    }
+
+}
