@@ -37,10 +37,3 @@ Spring Tool Suite (STS)
 - REST API integration between frontend and backend
 - Exception handling and validation
 
-## 📷 Screenshots
-
-### Home Page
-![Home](images/home.png)
-
-### Admin Panel
-![Admin](images/dashboard.png)
